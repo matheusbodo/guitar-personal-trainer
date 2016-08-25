@@ -1,8 +1,8 @@
 package br.com.matheusbodo.gpt.practice.service;
 
-import br.com.matheusbodo.gpt.practice.entity.Practice;
+import br.com.matheusbodo.gpt.practice.entity.PracticeSuggestion;
 
 public interface PracticeSuggestionGenerator {
 
-	Practice generate();
+	PracticeSuggestion generate();
 }

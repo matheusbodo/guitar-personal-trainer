@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.matheusbodo.gpt.practice.entity.Practice;
+import br.com.matheusbodo.gpt.practice.entity.PracticeSuggestion;
 import br.com.matheusbodo.gpt.practice.service.PracticeSuggestionGenerator;
 
 @Controller
@@ -18,7 +18,7 @@ public class PracticeController {
 	
 	@ResponseBody
 	@RequestMapping(value="/suggestion", method=RequestMethod.GET)
-	public Practice getSuggestion() {
+	public PracticeSuggestion getSuggestion() {
 		return practiceSuggestionGenerator.generate();
 	}
 }

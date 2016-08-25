@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import br.com.matheusbodo.gpt.music.enums.Keys;
 import br.com.matheusbodo.gpt.music.enums.Scales;
-import br.com.matheusbodo.gpt.practice.entity.Practice;
+import br.com.matheusbodo.gpt.practice.entity.PracticeSuggestion;
 import br.com.matheusbodo.gpt.practice.service.PracticeSuggestionGenerator;
 
 @RunWith(SpringRunner.class)
@@ -31,9 +31,9 @@ public class PracticeControllerTest {
 	
 	@Test
 	public void testGetSuggestion() throws Exception {
-		Practice practice = new Practice(Keys.E, Scales.PENTATONIC_MINOR, 1);
+		PracticeSuggestion practiceSuggestion = new PracticeSuggestion(Keys.E, Scales.PENTATONIC_MINOR, 1);
 		
-		given(practiceSuggestionGenerator.generate()).willReturn(practice);
+		given(practiceSuggestionGenerator.generate()).willReturn(practiceSuggestion);
 		
 		this.mvc.perform(get("/practices/suggestion")
 				.accept(MediaType.APPLICATION_JSON))

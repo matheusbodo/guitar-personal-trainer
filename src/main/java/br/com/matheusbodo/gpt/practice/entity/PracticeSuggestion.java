@@ -3,9 +3,9 @@ package br.com.matheusbodo.gpt.practice.entity;
 import br.com.matheusbodo.gpt.music.enums.Keys;
 import br.com.matheusbodo.gpt.music.enums.Scales;
 
-public class Practice {
+public class PracticeSuggestion {
 
-	public Practice(Keys key, Scales scale, int position) {
+	public PracticeSuggestion(Keys key, Scales scale, int position) {
 		this.key = key.getDescription();
 		this.scale = scale.getDescription();
 		this.position = position;
@@ -45,7 +45,7 @@ public class Practice {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Practice other = (Practice) obj;
+		PracticeSuggestion other = (PracticeSuggestion) obj;
 		if (key == null) {
 			if (other.key != null)
 				return false;

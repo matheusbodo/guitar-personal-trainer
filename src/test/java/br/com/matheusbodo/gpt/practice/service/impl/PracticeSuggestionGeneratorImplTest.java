@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import br.com.matheusbodo.gpt.music.enums.Keys;
 import br.com.matheusbodo.gpt.music.enums.Scales;
-import br.com.matheusbodo.gpt.practice.entity.Practice;
+import br.com.matheusbodo.gpt.practice.entity.PracticeSuggestion;
 import br.com.matheusbodo.gpt.practice.service.PracticeSuggestionGenerator;
 
 @RunWith(SpringRunner.class)
@@ -34,8 +34,8 @@ public class PracticeSuggestionGeneratorImplTest {
 		given(random.nextInt(Scales.values().length)).willReturn(3);
 		given(random.nextInt(Scales.PENTATONIC_MINOR.getPositions())).willReturn(0);
 		
-		Practice result = impl.generate();
-		Practice expected = new Practice(Keys.E, Scales.PENTATONIC_MINOR, 1);
+		PracticeSuggestion result = impl.generate();
+		PracticeSuggestion expected = new PracticeSuggestion(Keys.E, Scales.PENTATONIC_MINOR, 1);
 		Assert.assertEquals(expected, result);
 	}
 }
